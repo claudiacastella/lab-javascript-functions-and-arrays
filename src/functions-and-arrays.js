@@ -34,6 +34,22 @@ function findLongestWord(array) {
 return longestWord;
 }
 
+/* Método más sencillo
+if (!arr || arr.length === 0) return null;
+for (let i=0; i <arr.length; i++){
+  if (arr[i].length > max_word.length){
+    max_world = arr[i];
+  }
+}
+*/
+
+/* Otro método
+wordsArr.forEach(word => {
+  if(word.length >max.length) {
+    max = word;
+  }
+})
+*/
 
 // Iteration #3.1: Calculate the sum
 console.log("This is the iteration#3 result")
@@ -63,7 +79,7 @@ function sum(array) {
         result +=1
       } else if (array[i] === false) {
         result +=0 
-      } else result = Error();
+      } else throw new Error("Unsupported data type sir or ma'am");
     }    
   return result;
 }
@@ -89,6 +105,26 @@ function averageNumbers(array) {
   )
   return result;
 }
+
+/*
+function averageNumbers(array) { 
+  let sum = 0;
+  array.forEach((el) =>
+    switch (typeOf el) {
+      case "string":
+        sum += el.length;
+        break;
+      case "number":
+      case "boolean":
+        sum += el;
+        break;
+      default:
+        throw new Error;
+    }
+    )
+  return sum/ arr.length;
+}
+*/
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
@@ -172,6 +208,16 @@ console.log(uniquifyArray(wordsUnique))
 const wordsSolo = ["pepe", "maria", "juan", "diego"]
 console.log(uniquifyArray(wordsSolo))
 
+/*
+let newArr = [];
+if (array.length = 0) return null;
+for (let i = 0; i < array.length; i++){
+  if( !newArr.includes(array[i])) {
+    newArr.push(array[i])
+  }
+}
+*/
+
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
@@ -182,9 +228,14 @@ function doesWordExist(array, element) {
       result = true;
     } else result = false
   } else result = null;
-  array.includes(element);
   return result;
 }
+
+/*
+function doesWordExist(array, element) {
+  return (arr.length === 0 ? null : arr.includes(element));
+}
+*/
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -215,6 +266,13 @@ function howManyTimes(array,element) {
   return times;
 }
 
+/*
+function howManyTimes(arr,word) {
+  let count = 0;
+  arr.forEach(el => (el === word ? count++ : null) )  // si el equivale a word entonces (?) suma uno a count, sino(:) no hagas nada.
+  return count;
+}
+*/
 
 
 // Iteration #8: Bonus
@@ -257,6 +315,7 @@ console.log(greatestProduct(matrix))
 
 
 function greatestProductOfDiagonals(matrix) {}
+
 
 
 // The following is required to make unit tests work.
